@@ -1,0 +1,24 @@
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th><b>Time Saved</b></th>
+            <th><b>Stat</b></th>
+            <th><b>Location</b></th>
+            <th><b>Time</b></th>
+            <th><b></b></th>
+            <th><b></b></th>
+        </tr>
+    </thead>
+        <tr *ngFor="let i of this.data.index;let j = index">
+            <td>{{this.data.saved_time[j]}}</td>
+            <td>{{this.data.stats[j]}}</td>
+            <td>{{this.data.loc[j]}}</td>
+            <td>{{this.data.time[j]}}</td>
+            <td ><u (click)="apply(this.data.index[j])" role="button">display</u></td>
+            <td role="button"><u (click)="delete(this.data.index[j])" role="button">delete</u></td>
+        </tr>
+    <tbody>
+        
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+
+<form
+(change)="filterChange($event)"
+>
+    <section  style="float:left;">
+        Stat: 
+        <div *ngFor="let checkbox of statCheckboxes">
+            <input type="checkbox" 
+            [checked]=checkbox.checked 
+            class="stat_checkbox"
+            > {{checkbox.name}}
+        </div>
+    </section>
+    
+    <section  style="float:left;">
+        Location : 
+        <div *ngFor="let checkbox of locCheckboxes">
+            <input type="checkbox" 
+            [checked]=checkbox.checked 
+            class="loc_checkbox"
+            > {{checkbox.name}}
+        </div>
+    </section>
+
+    <section  style="float:left;">
+        <label for="start">Start date:</label>
+        <input type="date" 
+        id="start" 
+        name="start" 
+        min="2020-01-01" 
+        max="2022-04-15" 
+        value="2022-03-01"
+        id="start_date"
+        required="true"
+        
+        >
+        <label for="End">End date:</label>
+        <input type="date" 
+        id="End" 
+        name="End"
+         min="2020-01-01" 
+         max="2022-04-15"
+         value="2022-03-02"
+         id="end_date"
+         required="true"
+        >
+    </section>
+</form>
+<br><br><br><br><br><br><br><br>
+
+<input type="button" class="btn btn-warning"  value="Save Filter" (click)="saveFilter()">

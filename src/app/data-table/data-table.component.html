@@ -1,0 +1,20 @@
+
+<input type="button" class="btn btn-primary" (click)="generateTable()" value="Apply Filter">
+
+
+<br><br>
+<h3>Data From {{this.start_date}} To {{this.end_date}}</h3>
+<table class="table table-dark" >
+    <thead>
+        <tr>
+            <th *ngFor="let header of tableDatas[0]|keyvalue: returnZero" (click)="sort(header)" role="button">{{header.key}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of tableDatas|keyvalue: returnZero">
+            <td *ngFor="let cell of row.value|keyvalue: returnZero">
+                {{cell.value}}
+            </td>
+        </tr>
+    </tbody>
+</table>
